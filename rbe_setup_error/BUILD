@@ -1,4 +1,4 @@
 cc_binary(
 	name = "main",
-	scrs = ["main.cc"]
+	srcs = ["main.cc"]
 )
