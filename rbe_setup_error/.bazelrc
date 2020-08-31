@@ -1,0 +1,11 @@
+# Docker Sandbox Mode
+build:docker-sandbox --host_javabase=@rbe_default//java:jdk
+build:docker-sandbox --javabase=@rbe_default//java:jdk
+build:docker-sandbox --host_java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8
+build:docker-sandbox --java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8
+build:docker-sandbox --crosstool_top=@rbe_default//cc:toolchain
+build:docker-sandbox --experimental_docker_image=rbe-ubuntu16-04
+build:docker-sandbox --spawn_strategy=docker --strategy=Javac=docker --genrule_strategy=docker
+build:docker-sandbox --define=EXECUTOR=remote
+build:docker-sandbox --experimental_docker_verbose
+build:docker-sandbox --experimental_enable_docker_sandbox
